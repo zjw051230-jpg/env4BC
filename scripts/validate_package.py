@@ -75,8 +75,13 @@ def main() -> int:
             errors.append("update policy must be repair-missing-only")
         if manifest.get("material_policy") != "never-touch-user-materials":
             errors.append("material policy must be never-touch-user-materials")
+        if manifest.get("version") != "1.1.0":
+            errors.append("manifest version must be 1.1.0")
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"invalid manifest: {exc}")
+    installer = (root / "install.ps1").read_text(encoding="utf-8-sig", errors="ignore")
+    if "winget" not in installer or "联系维护人员" not in installer:
+        errors.append("trusted dependency installation contract is incomplete")
 
     if errors:
         print("VALIDATION FAILED")
