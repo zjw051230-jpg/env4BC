@@ -1,0 +1,13 @@
+{
+  "name": "env4BC",
+  "version": "1.0.0",
+  "platform": "Windows",
+  "components": {
+    "cc_switch": "program/cc-switch/cc-switch.exe",
+    "seedance_api_gui": "program/Seedance API配置工具.exe",
+    "model_route_tool": "scripts/configure_ccswitch_model.py",
+    "environment_scanner": "Env4BCSetup.pyw"
+  },
+  "update_policy": "repair-missing-only",
+  "material_policy": "never-touch-user-materials"
+}
