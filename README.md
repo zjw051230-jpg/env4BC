@@ -2,6 +2,8 @@
 
 CC Switch 只打包程序本体，不打包用户目录。API Key、provider、`%USERPROFILE%\.cc-switch\cc-switch.db`、数据库备份、API 池和运行状态永远留在本机，不进入 GitHub 或安装 ZIP。
 
+配音或视频业务发现环境资源不足时，先使用已安装 env4BC；其次使用带 SHA-256 的本机 env4BC 包；再从唯一官方仓库 `zjw051230-jpg/env4BC` 获取正式 Release。Python 和 ffmpeg 只允许通过 Windows winget 可信源补齐。任何校验、下载或安装失败都必须停止并提示联系维护人员，禁止使用第三方下载站。
+
 `env4BC` 是配音和视频生成工具共用的本机环境包。它只负责环境，不负责生产业务，也不保存、整理或迁移任何素材。
 
 ## 管理范围

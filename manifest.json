@@ -1,6 +1,6 @@
 {
   "name": "env4BC",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "platform": "Windows",
   "components": {
     "cc_switch": "program/cc-switch/cc-switch.exe",
