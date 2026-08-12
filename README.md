@@ -1,5 +1,7 @@
 # env4BC
 
+第一次安装配音 v3.0、视频 v2.0 和 env4BC，请先阅读 [首次安装说明](docs/首次安装说明.md)。首次安装会记录官方 GitHub 源，以后只需对 Codex 说“更新配音工具”或“更新视频工具”。
+
 CC Switch 只打包程序本体，不打包用户目录。API Key、provider、`%USERPROFILE%\.cc-switch\cc-switch.db`、数据库备份、API 池和运行状态永远留在本机，不进入 GitHub 或安装 ZIP。
 
 配音或视频业务发现环境资源不足时，先使用已安装 env4BC；其次使用带 SHA-256 的本机 env4BC 包；再从唯一官方仓库 `zjw051230-jpg/env4BC` 获取正式 Release。Python 和 ffmpeg 只允许通过 Windows winget 可信源补齐。任何校验、下载或安装失败都必须停止并提示联系维护人员，禁止使用第三方下载站。
