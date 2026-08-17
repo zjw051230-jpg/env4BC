@@ -1,45 +1,32 @@
-# env4BC
+# 媒体生产环境
 
-第一次安装配音 v3.0、视频 v2.0 和 env4BC，请先阅读 [首次安装说明](docs/首次安装说明.md)。首次安装会记录官方 GitHub 源，以后只需对 Codex 说“更新配音工具”或“更新视频工具”。
+`media-production-env` 为配音和视频工具提供共用的 Windows 运行环境，包括 Python、ffmpeg、Codex、CC Switch 检查以及 Seedance API 的本机配置入口。
 
-CC Switch 只打包程序本体，不打包用户目录。API Key、provider、`%USERPROFILE%\.cc-switch\cc-switch.db`、数据库备份、API 池和运行状态永远留在本机，不进入 GitHub 或安装 ZIP。
-
-配音或视频业务发现环境资源不足时，先使用已安装 env4BC；其次使用带 SHA-256 的本机 env4BC 包；再从唯一官方仓库 `zjw051230-jpg/env4BC` 获取正式 Release。Python 和 ffmpeg 只允许通过 Windows winget 可信源补齐。任何校验、下载或安装失败都必须停止并提示联系维护人员，禁止使用第三方下载站。
-
-`env4BC` 是配音和视频生成工具共用的本机环境包。它只负责环境，不负责生产业务，也不保存、整理或迁移任何素材。
-
-## 管理范围
-
-- CC Switch 3.18.0 内部精确路由版；
-- 只允许 `gpt-5.5 -> deepseek-v4-pro` 的精确本地路由；
-- Seedance API 本机密钥配置程序；
-- Python、ffmpeg、Codex、CC Switch 和配置工具的缺失扫描；
-- 桌面快捷方式和本机环境状态文件。
-
-## 绝对不管理
-
-- 配音素材、视频素材、剧本、提示词、参考图、参考音频；
-- 工作项目、生成视频、MP3、提交资料；
-- 快照、任务日志、复盘、隐藏任务清单；
-- 任何业务工作区的目录结构。
+它只负责环境，不管理项目、素材或生成结果。API Key、provider 配置和 CC Switch 用户数据库始终保留在本机。
 
 ## 安装
 
-双击 `Env4BCSetup.pyw`。程序先扫描组件：
+双击 `Env4BCSetup.pyw`。安装程序会先检查现有组件：
 
-- 已存在且版本符合：跳过；
-- 缺失：只安装缺失组件；
-- 已存在但不同：默认保留，不覆盖；只有用户明确勾选允许替换时，先备份程序文件再替换；
-- CC Switch 用户数据库永不随安装包复制或覆盖。
+- 版本符合时直接跳过；
+- 缺少组件时只安装缺少的部分；
+- 已安装其他版本时默认保留，明确选择后才会备份并替换；
+- 不复制或覆盖 CC Switch 的用户数据库。
 
-安装和更新只允许修改 env4BC 自身目录、CC Switch 程序目录、快捷方式及明确选择的 API 配置位置。不得递归扫描业务工作区，不得移动、改名、覆盖或删除素材。
+Python 和 ffmpeg 通过 Windows `winget` 获取。正式安装包应来自本仓库的 Release，并校验 SHA-256。
 
-## 给 Codex 的更新指令
+## 管理范围
 
-```text
-请更新 env4BC。先读取 README.md 和 docs/更新与修复规则.md，只扫描 env4BC 管理的环境组件，缺什么补什么。已有且可用的组件保持不变；不同版本默认保留，除非我明确批准替换。绝对不要扫描、整理、移动、改名、覆盖或删除任何配音/视频项目、素材、参考文件、生成成品、提交资料、快照、日志和隐藏任务记录。更新前列出计划修改的精确文件，更新后只报告环境组件结果。
-```
+- Python、ffmpeg、Codex 和 CC Switch 的可用性检查；
+- CC Switch 程序文件与指定的本地路由；
+- Seedance API 的本机密钥配置；
+- 桌面快捷方式与环境状态文件。
 
-## 业务包关系
+项目素材、生成文件、快照、任务日志和业务目录不在本工具的管理范围内。
 
-配音工具和 `word2video4BC` 只检测 env4BC 是否可用，不再捆绑 CC Switch 或 API 配置程序。业务包缺少环境时，应提示安装 env4BC，不能自行复制环境工具。
+## 配套仓库
+
+- [video-production-kit](https://github.com/zjw051230-jpg/video-production-kit)
+- [voice-production-kit](https://github.com/zjw051230-jpg/voice-production-kit)
+
+首次安装前请阅读 [首次安装说明](docs/首次安装说明.md)；更新和修复规则见 [更新与修复规则](docs/更新与修复规则.md)。
